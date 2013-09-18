@@ -1,12 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Puffpuffdragons</title>
+  <title>Puff Puff Dragon Boat Club</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script>
+     $(function() {
+        $('.nav li').click(function() {
+           $('.nav li').removeClass();
+           $(this).addClass('active');
+        });
+     });
+  </script>
   <%= csrf_meta_tags %>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
+
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Puff Puff Dragons</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#join">Join Us</a></li>
+        <li><a href="#training">Training</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#occlub">OC Club</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+<%#= render 'layouts/messages' %>
 
 <%= yield %>
 
