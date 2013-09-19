@@ -1,18 +1,11 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 ruby '2.0.0'
-gem 'rails_12factor', group: :production
 
 # Use postgresql as the database for Active Record
 gem 'pg'
-
-# Gemfile in Rails >= 3.1
-gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
-gem 'inherited_resources'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -51,3 +44,12 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'rails_12factor', group: :production
+gem 'jekyll'
+
+# Gemfile in Rails >= 3.1
+gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
+gem 'inherited_resources'
+
+
