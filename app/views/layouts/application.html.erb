@@ -57,9 +57,17 @@
                     <li><%= link_to "Team Questionnaire", asset_path('PPD_Team_Questionnaire.pdf') %></li>
                   </ul>
                 </li>
-                <li><%= link_to "Training", training_path %></li>
-                <li><a href="#contact">Schedule</a></li>
-                <li><a href="#contact">Media</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="/training">Training <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Water Practice", training_path+"#water-practice" %></li>
+                    <li><%= link_to "Outrigger Canoe", training_path+"#outrigger-canoe" %></li>
+                    <li><%= link_to "Land Practice", training_path+"#land-practice" %></li>
+                    <li><%= link_to "ERG Rowing", training_path+"#erg-rowing" %></li>
+                  </ul>
+                </li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#media">Media</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#">OC Club</a></li>
               </ul>
