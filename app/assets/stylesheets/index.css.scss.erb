@@ -44,6 +44,7 @@ body {
   background-color: #777;
 }
 .carousel-inner > .item > img {
+  opacity: 0.7;
   position: absolute;
   top: 0;
   left: 0;
@@ -78,9 +79,12 @@ body {
 
 /* Featurettes
 ------------------------- */
+.featurette {
+  padding-left: 20px;
+}
 
 .featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
@@ -127,6 +131,10 @@ body {
 
 @media (min-width: 992px) {
   .featurette-heading {
-    margin-top: 120px;
+    margin-top: 20px;
   }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+
 }

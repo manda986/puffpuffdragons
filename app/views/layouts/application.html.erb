@@ -11,14 +11,6 @@
 
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 
-  <script>
-     $(function() {
-        $('.nav li').click(function() {
-           $('.nav li').removeClass();
-           $(this).addClass('active');
-        });
-     });
-  </script>
   <%= csrf_meta_tags %>
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -40,25 +32,36 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Project name</a>
+              <%= link_to "Puff Puff Dragons", root_path, :class => 'navbar-brand' %>
+
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active"><%= link_to "Home", root_path %></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="/about">About <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
+                    <li><%= link_to "Who We Are", about_path + "#who-we-are" %></li>
+                    <li><%= link_to "Our Mission Statement", about_path + "#our-mission-statement" %></li>
+                    <li><%= link_to "Achievements", about_path + "#achievements" %></li>
+                    <li><%= link_to "What is Dragon Boat", about_path + "#what-is-dragonboat" %></li>
+                    <li><%= link_to "Dragonboating Worldwide", about_path + "#dragonboating-worldwide" %></li>
+                    <li><%= link_to "Makeup of a Team", about_path + "#makeup-of-a-team" %></li>
                   </ul>
                 </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="/join">Join <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Join Us", join_path %></li>
+                    <li><%= link_to "Waiver", asset_path('WFMCC_Electronic_Waiver.pdf') %></li>
+                    <li><%= link_to "Team Questionnaire", asset_path('PPD_Team_Questionnaire.pdf') %></li>
+                  </ul>
+                </li>
+                <li><%= link_to "Training", training_path %></li>
+                <li><a href="#contact">Schedule</a></li>
+                <li><a href="#contact">Media</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">OC Club</a></li>
               </ul>
             </div>
           </div>
