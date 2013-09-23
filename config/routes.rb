@@ -12,6 +12,7 @@ Puffpuffdragons::Application.routes.draw do
   get '/about' => 'home#about'
   get '/join' => 'home#join'
   get '/training' => 'home#training'
+  get '/ispracticeon' => 'home#is_practice_on'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

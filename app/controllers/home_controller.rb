@@ -11,4 +11,7 @@ class HomeController < ApplicationController
   def training
   end
 
+  def is_practice_on
+  end
+
 end
