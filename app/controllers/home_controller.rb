@@ -11,6 +11,18 @@ class HomeController < ApplicationController
   def training
   end
 
+  def schedule
+  end
+
+  def media
+  end
+
+  def contact
+  end
+
+  def oc_club
+  end
+
   def is_practice_on
   end
 

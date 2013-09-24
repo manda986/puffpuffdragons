@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//#= require active_admin
+//#= require bootstrap
+//= require holder
+//= require html5shiv
+//= require respond.min
+
+//#= require handlebars
+//#= require ember
+//#= require_tree .

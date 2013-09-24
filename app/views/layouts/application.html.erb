@@ -10,6 +10,8 @@
   <title>Puff Puff Dragon Boat Club</title>
 
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
   <%= csrf_meta_tags %>
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -37,39 +39,45 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><%= link_to "Home", root_path %></li>
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="/about">About <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><%= link_to "Who We Are", about_path + "#who-we-are" %></li>
-                    <li><%= link_to "Our Mission Statement", about_path + "#our-mission-statement" %></li>
-                    <li><%= link_to "Achievements", about_path + "#achievements" %></li>
-                    <li><%= link_to "What is Dragon Boat", about_path + "#what-is-dragonboat" %></li>
-                    <li><%= link_to "Dragonboating Worldwide", about_path + "#dragonboating-worldwide" %></li>
-                    <li><%= link_to "Makeup of a Team", about_path + "#makeup-of-a-team" %></li>
+                <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+                <li class="dropdown <%= 'active' if current_page?(about_path) %>">
+                  <a id="drop-about" role="button" data-toggle="dropdown" href="<%= about_path %>">About <b class="caret"></b></a>
+                  <ul id="about-menu" class="dropdown-menu" role="menu" aria-labelledby="drop-about">
+                    <li role="presentation"><%= link_to "Who We Are", about_path + "#who-we-are", :role => 'menuitem' %></li>
+                    <li role="presentation"><%= link_to "Our Mission Statement", about_path + "#our-mission-statement", :role => 'menuitem' %></li>
+                    <li role="presentation"><%= link_to "Achievements", about_path + "#achievements", :role => 'menuitem' %></li>
+                    <li role="presentation"><%= link_to "What is Dragon Boat", about_path + "#what-is-dragonboat", :role => 'menuitem' %></li>
+                    <li role="presentation"><%= link_to "Dragonboating Worldwide", about_path + "#dragonboating-worldwide", :role => 'menuitem' %></li>
+                    <li role="presentation"><%= link_to "Makeup of a Team", about_path + "#makeup-of-a-team", :role => 'menuitem' %></li>
                   </ul>
                 </li>
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="/join">Join <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><%= link_to "Join Us", join_path %></li>
-                    <li><%= link_to "Waiver", asset_path('WFMCC_Electronic_Waiver.pdf') %></li>
-                    <li><%= link_to "Team Questionnaire", asset_path('PPD_Team_Questionnaire.pdf') %></li>
+                <li class="dropdown <%= 'active' if current_page?(join_path) %>">
+                  <a id="drop-join" role="button" data-toggle="dropdown" href="<%= join_path %>">Join <b class="caret"></b></a>
+                  <ul id="join-menu" class="dropdown-menu" role="menu" aria-labelledby="drop-join">
+                    <li role="presentation"><%= link_to "Join Us", join_path, :role => 'menuitem' %></li>
+                    <li role="presentation"><%= link_to "Waiver", asset_path('WFMCC_Electronic_Waiver.pdf') %></li>
+                    <li role="presentation"><%= link_to "Team Questionnaire", asset_path('PPD_Team_Questionnaire.pdf') %></li>
                   </ul>
                 </li>
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="/training">Training <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><%= link_to "Water Practice", training_path+"#water-practice" %></li>
-                    <li><%= link_to "Outrigger Canoe", training_path+"#outrigger-canoe" %></li>
-                    <li><%= link_to "Land Practice", training_path+"#land-practice" %></li>
-                    <li><%= link_to "ERG Rowing", training_path+"#erg-rowing" %></li>
+                <li class="dropdown <%= 'active' if current_page?(training_path) %>">
+                  <a id="drop-training" role="button" data-toggle="dropdown" href="<%= training_path %>">Training <b class="caret"></b></a>
+                  <ul id="training-menu" class="dropdown-menu" role="menu" aria-labelledby="drop-training">
+                    <li role="presentation"><%= link_to "Water Practice", training_path+"#water-practice", :role => 'menuitem' %></li>
+                    <li role="presentation"><%= link_to "Outrigger Canoe", training_path+"#outrigger-canoe", :role => 'menuitem' %></li>
+                    <li role="presentation"><%= link_to "Land Practice", training_path+"#land-practice", :role => 'menuitem' %></li>
+                    <li role="presentation"><%= link_to "ERG Rowing", training_path+"#erg-rowing", :role => 'menuitem' %></li>
                   </ul>
                 </li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#media">Media</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#">OC Club</a></li>
+                <li class="dropdown <%= 'active' if current_page?(schedule_path) %>">
+                  <a id="drop-schedule" role="button" data-toggle="dropdown" href="<%= schedule_path %>">Schedule <b class="caret"></b></a>
+                  <ul id="schedule-menu" class="dropdown-menu" role="menu" aria-labelledby="drop-schedule">
+                    <li role="presentation"><%= link_to "Practices", schedule_path+"#practices", :role => 'menuitem' %></li>
+                    <li role="presentation"><%= link_to "Races", schedule_path+"#races", :role => 'menuitem' %></li>
+                  </ul>
+                </li>
+                <li class="<%= 'active' if current_page?(media_path) %>"><%= link_to "Media", media_path %></li>
+                <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
+                <li class="<%= 'active' if current_page?(oc_club_path) %>"><%= link_to "OC Club", oc_club_path %></li>
               </ul>
             </div>
           </div>
@@ -83,6 +91,7 @@
 
 
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>

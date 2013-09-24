@@ -12,6 +12,10 @@ Puffpuffdragons::Application.routes.draw do
   get '/about' => 'home#about'
   get '/join' => 'home#join'
   get '/training' => 'home#training'
+  get '/schedule' => 'home#schedule'
+  get '/media' => 'home#media'
+  get '/contact' => 'home#contact'
+  get '/oc_club' => 'home#oc_club'
   get '/ispracticeon' => 'home#is_practice_on'
 
 
