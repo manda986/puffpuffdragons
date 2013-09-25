@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //#= require active_admin
-//#= require bootstrap
 //= require holder
 //= require html5shiv
 //= require respond.min
