@@ -15,7 +15,6 @@ Puffpuffdragons::Application.routes.draw do
   get '/schedule' => 'home#schedule'
   get '/media' => 'home#media'
   get '/contact' => 'home#contact'
-  get '/oc_club' => 'home#oc_club'
   get '/ispracticeon' => 'home#is_practice_on'
 
 
