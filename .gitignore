@@ -21,3 +21,5 @@ doc/
 /log/*
 *.log
 /tmp/*
+
+.idea
