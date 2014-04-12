@@ -49,7 +49,7 @@ gem 'rails_12factor', group: :production
 gem 'jekyll'
 
 # Gemfile in Rails >= 3.1
-gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'inherited_resources'
 
 
